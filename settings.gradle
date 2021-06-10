@@ -1,0 +1,2 @@
+rootProject.name = "My_CURD_Application"
+include ':app'
