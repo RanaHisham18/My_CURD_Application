@@ -78,10 +78,8 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
         }
     }
 
-    suspend fun getSavedSubscribers() = liveData {
-        repository.subscribers.collect{
-            emit(it)
-        }
+    fun getSavedSubscribers(): LiveData<List<Subscriber>> {
+        return repository.subscribers.asLiveData()
     }
 
     fun clearAllOrDelete() {
